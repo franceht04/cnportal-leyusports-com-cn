@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 资料索引与信息整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        /* —— 深色头图 —— */
+        .hero {
+            background: linear-gradient(145deg, #0f1823 0%, #1b2a3a 100%);
+            padding: 4rem 2rem 3.5rem;
+            text-align: center;
+            color: #e6edf3;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(62, 130, 200, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 680px;
+            margin: 0.6rem auto 0;
+            color: #b6c9db;
+            font-weight: 300;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            margin-top: 1.8rem;
+            padding: 0.25rem 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #9bb5d3;
+            letter-spacing: 1px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* —— 正文浅色区 —— */
+        .content {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+            background: #ffffff;
+        }
+
+        .content h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #1e2b3c;
+            margin: 2.2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e6edf5;
+        }
+
+        .content h2:first-of-type {
+            margin-top: 0.2rem;
+        }
+
+        .content p {
+            margin-bottom: 1.4rem;
+            font-size: 1rem;
+            color: #3d4a59;
+        }
+
+        .content a {
+            color: #1f6ea8;
+            text-decoration: none;
+            border-bottom: 1px solid #c3d7ec;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .content a:hover {
+            color: #0a3d62;
+            border-bottom-color: #1f6ea8;
+        }
+
+        /* —— 特点列表 —— */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin: 1.8rem 0 2rem;
+        }
+
+        .feature-card {
+            flex: 1 1 200px;
+            background: #f8faff;
+            padding: 1.6rem 1.4rem;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border-left: 4px solid #2f7cb2;
+            transition: transform 0.1s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            background: #f2f8ff;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1c3147;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: #4d5d6e;
+            margin-bottom: 0;
+        }
+
+        /* —— 引用/提示区块 —— */
+        .insight-box {
+            background: #f0f4fa;
+            border-radius: 16px;
+            padding: 1.8rem 2rem;
+            margin: 2.2rem 0;
+            border: 1px solid #dbe4ed;
+        }
+
+        .insight-box p {
+            margin-bottom: 0.6rem;
+        }
+
+        .insight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .insight-box .label {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            background: #d1dfed;
+            color: #1d3a58;
+            padding: 0.1rem 0.9rem;
+            border-radius: 30px;
+            margin-bottom: 0.8rem;
+        }
+
+        /* —— FAQ 摘要（轻量） —— */
+        .faq-mini {
+            margin: 2.5rem 0 1rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            padding: 0.8rem 1.2rem;
+            background: #fafcff;
+            border-radius: 10px;
+            border: 1px solid #e3eaf3;
+            transition: background 0.15s;
+        }
+
+        .faq-mini details[open] {
+            background: #f2f7fe;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            color: #1d3147;
+            cursor: pointer;
+            padding: 0.2rem 0;
+        }
+
+        .faq-mini details p {
+            margin-top: 0.6rem;
+            font-size: 0.95rem;
+            color: #445566;
+        }
+
+        /* —— 温和结尾 —— */
+        .gentle-close {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dce5ef;
+            font-style: normal;
+            color: #4b5b6c;
+        }
+
+        .gentle-close p {
+            font-size: 0.98rem;
+            color: #4b5b6c;
+        }
+
+        /* —— 响应式 —— */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .content {
+                padding: 2rem 1.2rem 3rem;
+            }
+            .feature-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .feature-card {
+                flex: 1 1 100%;
+            }
+            .insight-box {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem 2.5rem;
+            }
+            .content h2 {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 深色头图 -->
+<section class="hero">
+    <h1>资料索引 · 信息整理</h1>
+    <p>从分类、归档与检索的视角，梳理体育资讯平台的结构与逻辑。</p>
+    <span class="tagline">基于公开资料 · 整理型笔记</span>
+</section>
+
+<!-- 浅色正文区 -->
+<div class="content">
+
+    <!-- 开篇短句 -->
+    <p style="font-size:1.08rem; color:#1f3348; margin-bottom:1.6rem;">
+        面对体育领域纷繁的赛事动态与数据流，有效的资料整理是降低信息噪音的第一步。<br>
+        这里尝试从索引化、模块化的角度，还原一个清晰的内容框架。
+    </p>
+
+    <!-- 承接段落：从资料整理出发 -->
+    <h2>为什么需要信息索引</h2>
+    <p>
+        体育资讯涵盖联赛、杯赛、转会、数据统计等多个维度，不同来源的信息常常交错重叠。
+        通过建立轻量的分类标签与层级结构，可以更快地定位某一赛事的最新动态，或回溯特定球队的历史交锋记录。
+        这种整理方式并非追求面面俱到，而是希望在庞杂的内容中，为浏览者提供一条相对清晰的线索。
+    </p>
+    <p>
+        以 <a href="https://cnportal-leyusports.com.cn">乐鱼体育</a> 所呈现的资讯模块为例，其页面组织方式带有明显的分类意识：
+        将热门赛事、球队专题、数据排行等项目分别归入不同区块，用户可根据兴趣方向直接切入，无需逐页翻找。
+    </p>
+
+    <!-- 特点列表（卡片式） -->
+    <h2>模块分类特点</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>赛事归档</h3>
+            <p>按联赛、杯赛、洲际赛事分类，保留近期赛果与赛程，便于横向对比。</p>
+        </div>
+        <div class="feature-card">
+            <h3>球队索引</h3>
+            <p>以俱乐部或国家队为单元，汇总阵容变化、关键场次及赛季数据。</p>
+        </div>
+        <div class="feature-card">
+            <h3>统计条目</h3>
+            <p>积分榜、射手榜、助攻榜等常见统计维度，以表格或列表形式呈现。</p>
+        </div>
+        <div class="feature-card">
+            <h3>资讯简报</h3>
+            <p>摘要式新闻流，配合时间戳与来源标注，侧重事实而非评论。</p>
+        </div>
+    </div>
+
+    <!-- 场景 / 提示区块 -->
+    <div class="insight-box">
+        <span class="label">整理思路</span>
+        <p>在浏览体育资讯时，可以尝试先确定自己关注的赛事层级（例如：欧洲五大联赛 → 具体联赛 → 某支球队），再依据该层级对应的标签寻找内容。这种递进式索引能减少大量无关信息的干扰。</p>
+        <p>同时，留意页面中的固定栏目（如“热门赛事”“数据排行”），它们往往是经过编辑筛选的高频入口，适合快速了解当前焦点。</p>
+    </div>
+
+    <!-- FAQ 摘要（轻量，2—3 条） -->
+    <div class="faq-mini">
+        <h2 style="border-bottom: none; margin-bottom: 0.6rem;">常见疑问摘要</h2>
+
+        <details>
+            <summary>如何判断赛事信息的更新时效？</summary>
+            <p>多数体育资讯平台会在比赛结束后半小时内更新比分与简讯。若需要更精确的时间线，可留意页面内标注的“更新时间”或“X分钟前”等标识。对于深度数据（如球员统计），更新周期可能延长至比赛次日。</p>
+        </details>
+        <details>
+            <summary>球队资料通常包含哪些基础字段？</summary>
+            <p>一般包括：球队名称（中/英文）、主场球场、现任主教练、核心球员列表、近五场战绩、赛季积分/排名。部分平台还会附加历史荣誉与转会记录。</p>
+        </details>
+        <details>
+            <summary>怎样利用分类标签提升检索效率？</summary>
+            <p>建议先选择赛事类型（如“英超”“欧冠”），再结合球队或日期筛选。若平台支持多标签组合（例如“英超 + 阿森纳 + 2024/25赛季”），可极大缩小结果范围。不熟悉时，从首页的导航栏或“赛事”入口开始通常最直接。</p>
+        </details>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="gentle-close">
+        <p>资料整理的目的不在于替代浏览，而是为每一次主动查找提供更短的路径。<br>
+        希望这份索引视角能帮助你在接触体育资讯时，更快找到自己关注的那一块内容拼图。</p>
+        <p style="margin-top:0.8rem; font-size:0.92rem; color:#6a7d92;">
+            本文档基于公开可访问的信息结构编写，仅作资料梳理与参考。
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

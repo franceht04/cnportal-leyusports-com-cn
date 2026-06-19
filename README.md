@@ -1,2 +1,30 @@
-# cnportal-leyusports-com-cn
-乐鱼体育 - https://cnportal-leyusports.com.cn
+# 乐鱼体育 - 官方网站
+
+欢迎访问 **乐鱼体育** 官方网站。本平台致力于为用户提供丰富、优质的体育赛事信息与相关服务。您可以通过以下链接直接访问：
+
+🔗 [https://cnportal-leyusports.com.cn](https://cnportal-leyusports.com.cn)
+
+## 简介
+
+**乐鱼体育** 是一个专注于体育领域的综合性信息平台，旨在为体育爱好者提供便捷、高效的在线服务。通过访问 [https://cnportal-leyusports.com.cn](https://cnportal-leyusports.com.cn)，您可以获取最新的体育动态、赛事资讯以及相关功能支持。
+
+## 主要特点
+
+- **内容全面**：覆盖多种主流体育项目，提供详尽的赛事数据和信息。
+- **界面简洁**：网站设计注重用户体验，方便快速查找所需内容。
+- **稳定可靠**：依托专业的技术支持，确保访问流畅与数据安全。
+
+## 访问方式
+
+您只需在浏览器地址栏输入以下网址即可进入 **乐鱼体育** 官方网站：
+
+[https://cnportal-leyusports.com.cn](https://cnportal-leyusports.com.cn)
+
+无需额外下载或安装，直接通过网页浏览即可体验。
+
+## 注意事项
+
+- 本网站仅提供合规的体育信息服务，请合理使用。
+- 如遇访问问题，建议检查网络连接或更换浏览器尝试。
+
+感谢您对 **乐鱼体育** 的关注与支持。
