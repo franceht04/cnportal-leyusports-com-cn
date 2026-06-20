@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赏金大对决 · 极致猎杀体验</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #f6f5f2;
+            color: #1e1e1f;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .page {
+            max-width: 640px;
+            width: 100%;
+        }
+        /* 开场短句 – 静谧中的张力 */
+        .opening {
+            margin-bottom: 3rem;
+            padding-top: 1rem;
+            border-top: 2px solid #d0cdc4;
+        }
+        .opening p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #484644;
+            margin-bottom: 0.4rem;
+        }
+        .opening .big-print {
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 1.15;
+            color: #20201e;
+            margin-top: 0.2rem;
+        }
+        /* 承接段落 */
+        .context {
+            margin-bottom: 3rem;
+        }
+        .context p {
+            font-size: 1rem;
+            color: #353433;
+            margin-bottom: 1.2rem;
+        }
+        .context p strong {
+            font-weight: 600;
+            color: #0f0f0e;
+        }
+        /* 特点列表 – 窄正文，清晰分层 */
+        .feature-list {
+            list-style: none;
+            margin: 2.2rem 0 2.8rem 0;
+            padding: 0;
+        }
+        .feature-list li {
+            border-bottom: 1px solid #e3e0d9;
+            padding: 1.1rem 0;
+            display: flex;
+            gap: 0.8rem;
+            align-items: baseline;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-marker {
+            font-weight: 600;
+            color: #9b4b1b;
+            min-width: 2.4rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+        }
+        .feature-content {
+            font-size: 0.98rem;
+            color: #2c2b29;
+        }
+        .feature-content span {
+            display: inline-block;
+            background: #e9e5dd;
+            padding: 0.05rem 0.5rem;
+            border-radius: 3px;
+            font-weight: 500;
+            color: #1d1c1a;
+        }
+        /* 温和结尾 – 低对比，轻盈感 */
+        .gentle-closing {
+            background: #efede8;
+            padding: 1.8rem 1.6rem;
+            border-radius: 12px;
+            margin: 2.8rem 0 2rem 0;
+        }
+        .gentle-closing p {
+            font-size: 0.98rem;
+            color: #2f2e2c;
+            margin-bottom: 0.9rem;
+        }
+        .gentle-closing p:last-child {
+            margin-bottom: 0;
+        }
+        .link-inline {
+            color: #864d26;
+            text-decoration: none;
+            border-bottom: 1px solid #cbb49c;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 500;
+        }
+        .link-inline:hover {
+            color: #4f2f18;
+            border-bottom-color: #864d26;
+        }
+        /* 提示或场景小卡 – 嵌入在承接段落之后 */
+        .insight-card {
+            background: #ffffffd6;
+            backdrop-filter: blur(2px);
+            padding: 1.2rem 1.4rem;
+            border-radius: 20px;
+            margin: 2rem 0 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e0dbd2;
+        }
+        .insight-card p {
+            font-size: 0.95rem;
+            color: #383634;
+            margin-bottom: 0.5rem;
+        }
+        .insight-card .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #9b8773;
+            margin-bottom: 0.35rem;
+        }
+        /* FAQ 摘要 – 极简折叠感 */
+        .faq-mini {
+            margin: 2rem 0 0.5rem 0;
+            padding: 0;
+        }
+        .faq-item {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #dedad2;
+            padding: 0.9rem 0;
+        }
+        .faq-q {
+            font-weight: 500;
+            font-size: 0.94rem;
+            color: #2f2c29;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            font-size: 0.88rem;
+            color: #615d57;
+            line-height: 1.5;
+        }
+        .faq-a a {
+            color: #7a5f47;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c5b4a2;
+        }
+        .faq-a a:hover {
+            color: #2e221b;
+        }
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            body { padding: 1.8rem 0.8rem; }
+            .opening .big-print { font-size: 1.9rem; }
+            .feature-list li { flex-wrap: wrap; gap: 0.2rem; }
+            .gentle-closing { padding: 1.4rem 1rem; }
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #e1ddd4;
+            margin: 0.5rem 0 1.8rem 0;
+        }
+        .footnote {
+            font-size: 0.75rem;
+            color: #a7a098;
+            text-align: center;
+            margin-top: 3rem;
+            letter-spacing: 0.02em;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句 -->
+    <div class="opening">
+        <p>▎ 暗流之下</p>
+        <div class="big-print">赏金已落，<br>对决即启。</div>
+    </div>
+
+    <!-- 承接段落：从关键词背后的主题展开 -->
+    <div class="context">
+        <p>
+            “赏金大对决”并非一句空泛的标语。它所指向的，是每局游戏中筹码与战术双重博弈的临界点——当你与另一位猎手同时盯上同一个目标，胜负不只看枪法，更取决于信息、走位与耐心。在 <strong>play-bountyshowdown.com</strong> 的生态里，每一份赏金背后都藏着一条独特的决策链。
+        </p>
+        <p>
+            这不是简单的击杀竞赛，而是一场关于<strong>风险与回报的精密计算</strong>。你可以选择高速清场、拿走低额赏金全身而退；也可以蹲守最危险的区域，等待那个身负高额悬赏的猎物自己现身。游戏设计鼓励玩家不断重新评估局势，而非机械重复。
+        </p>
+    </div>
+
+    <!-- 特点列表：信息密度稍高，避免模板化 -->
+    <ul class="feature-list">
+        <li>
+            <span class="feature-marker">· 动态赏金</span>
+            <span class="feature-content">悬赏金额随存活玩家数量和地图事件实时波动。击杀高赏金目标不仅能获得大量货币，还会重置区域的警戒等级。</span>
+        </li>
+        <li>
+            <span class="feature-marker">· 契约系统</span>
+            <span class="feature-content">每局可从三个随机契约中选择其一——例如<span>「幽灵赏金」</span>（击杀后延迟暴露位置）或<span>「贪婪标记」</span>（双倍赏金但全图可见）。没有万能选项。</span>
+        </li>
+        <li>
+            <span class="feature-marker">· 无声交锋</span>
+            <span class="feature-content">地图中存在多个“暗影地带”，进入后脚步声与枪声大幅减弱。高分段玩家常利用这些区域制造信息差，完成反杀。</span>
+        </li>
+        <li>
+            <span class="feature-marker">· 最终结算</span>
+            <span class="feature-content">赏金不仅用于 cosmetic 解锁，还直接影响下回合的初始装备购买力。连续高赏金回合将带来明显的经济滚雪球效应。</span>
+        </li>
+    </ul>
+
+    <!-- 场景卡 / 提示块：嵌入式，不刻意 -->
+    <div class="insight-card">
+        <div class="label">◈ 场景速写</div>
+        <p>废弃工厂二楼，你听见对面仓库传来交火声。小地图显示你的「赏金大对决」目标正在向你的方向移动——但他已经残血。你手里只剩三发子弹，而另一支队伍也在向这里包抄。这种时刻，<strong>每一次决策都在重写结局</strong>。</p>
+    </div>
+
+    <!-- FAQ 摘要：简短，自然 -->
+    <div class="faq-mini">
+        <div class="faq-item">
+            <div class="faq-q">赏金大对决需要组队吗？</div>
+            <div class="faq-a">完全支持单人、双人或三人小队。匹配机制会根据队伍规模调整赏金权重与地图人数。单人潜行流同样有竞争力。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">新手如何快速上手赏金机制？</div>
+            <div class="faq-a">建议从低风险区域开始，熟悉地图上的赏金刷新点与撤离路线。先完成简单契约，积累经济后再挑战高额悬赏。更多细节可在 <a href="https://play-bountyshowdown.com">赏金大对决</a> 的指南中找到。</div>
+        </div>
+    </div>
+
+    <!-- 温和结尾：安静收束 -->
+    <div class="gentle-closing">
+        <p>赏金之所以迷人，是因为它从不承诺安全的胜利。每一次对决都在考验你阅读局势的能力——是冒险追击，还是冷静撤离，最终都由你自己决定。</p>
+        <p>如果你厌倦了千篇一律的射击循环，不妨在 <a href="https://play-bountyshowdown.com" class="link-inline">赏金大对决</a> 中体验这种每一局都不同的博弈节奏。无需多言，猎场会告诉你一切。</p>
+    </div>
+
+    <hr>
+    <div class="footnote">— 信息密度优先 · 简洁专业 —</div>
+
+</div>
+</body>
+</html>
