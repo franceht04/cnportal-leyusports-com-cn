@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星空体育 – 概要说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fa;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0b1729 0%, #14273e 100%);
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+      color: #e9edf2;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 0.8rem;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 1.2rem;
+      font-size: 1.05rem;
+      opacity: 0.85;
+    }
+    .hero .sub-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      padding: 0.3rem 1rem;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    /* 导航 (极简轻量) */
+    .top-nav {
+      background: #f5f7fa;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem 2rem;
+      border-bottom: 1px solid #dce2ea;
+    }
+    .top-nav a {
+      text-decoration: none;
+      color: #2c3e58;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.3rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .top-nav a:hover {
+      border-bottom-color: #2563eb;
+    }
+    .top-nav .nav-highlight {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+
+    /* 主内容区 */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* 介绍板块 */
+    .intro-block {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      margin-bottom: 2.8rem;
+    }
+    .intro-block h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+    .intro-block p {
+      margin-bottom: 1rem;
+    }
+    .intro-block a {
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+    .intro-block a:hover {
+      color: #1d4ed8;
+    }
+
+    /* 三场景卡片网格 */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+    .scene-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem 1.6rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #eef2f7;
+    }
+    .scene-card:hover {
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+      transform: translateY(-2px);
+    }
+    .scene-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #0f172a;
+    }
+    .scene-card p {
+      font-size: 0.98rem;
+      color: #334155;
+    }
+    .scene-card .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+      display: inline-block;
+    }
+
+    /* FAQ / 说明折叠区 */
+    .faq-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      margin-bottom: 2rem;
+    }
+    .faq-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 1.2rem;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e7ecf3;
+      padding: 0.9rem 0;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-item dt {
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.25rem;
+      font-size: 1.02rem;
+    }
+    .faq-item dd {
+      margin-left: 0;
+      color: #3b4a60;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* 提示小条 */
+    .note-tip {
+      background: #eef4ff;
+      border-left: 4px solid #2563eb;
+      padding: 1.2rem 1.6rem;
+      border-radius: 0 14px 14px 0;
+      margin-top: 1.8rem;
+      font-size: 0.95rem;
+      color: #1e293b;
+    }
+    .note-tip strong {
+      color: #0f172a;
+    }
+
+    /* 页脚 */
+    .page-footer {
+      text-align: center;
+      padding: 2rem 1.5rem 1.5rem;
+      font-size: 0.85rem;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      background: #ffffff;
+      margin-top: 1rem;
+    }
+    .page-footer a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .top-nav {
+        gap: 0.8rem 1.2rem;
+        padding: 0.6rem 1rem;
+      }
+      .container {
+        padding: 1.5rem 1rem 2rem;
+      }
+      .intro-block, .faq-section {
+        padding: 1.5rem 1.2rem;
+      }
+      .scene-card {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 轻量导航 -->
+<nav class="top-nav">
+  <span style="font-weight:600; color:#0f172a;">星空体育</span>
+  <a href="#" class="nav-highlight">概述</a>
+  <a href="#">场景</a>
+  <a href="#">说明</a>
+  <a href="#">常见问题</a>
+</nav>
+
+<!-- 深色头图 -->
+<header class="hero">
+  <h1>星空体育 · 站点介绍</h1>
+  <p>一份关于平台定位、场景应用与基础信息的整理说明，便于快速了解整体轮廓。</p>
+  <span class="sub-tag">信息页 · 内容持续校准</span>
+</header>
+
+<main class="container">
+
+  <!-- 核心介绍 & 可信说明 -->
+  <section class="intro-block">
+    <h2>关于本平台</h2>
+    <p>
+      <a href="https://app-site-xingkongsports.com">星空体育</a> 是一个提供体育相关资讯与互动服务的在线站点。平台以运动内容为线索，聚合赛事观察、数据参考以及社区交流等板块，面向对体育感兴趣的用户群体。页面设计追求简洁清晰，信息组织方式注重可读性。
+    </p>
+    <p>
+      在内容可信层面，站内所引用的赛程、比分、统计等信息均标注来源或基于公开数据整理。平台不虚构数据，不发布未经核实的预测，并持续优化信息呈现的准确性。用户可通过站点内置的反馈渠道提交疑问或修正建议。
+    </p>
+    <p>
+      平台运营方重视用户隐私与数据安全，未在页面中植入恶意脚本或未经授权的第三方追踪。所有链接跳转均指向本站或明确授权的合作页面。
+    </p>
+  </section>
+
+  <!-- 三个场景模块 -->
+  <section>
+    <h2 style="font-size:1.4rem; font-weight:600; margin-bottom:1.2rem; color:#0f172a;">三个常见使用场景</h2>
+    <div class="scene-grid">
+      <div class="scene-card">
+        <span class="card-icon">📋</span>
+        <h3>赛程与结果查阅</h3>
+        <p>快速浏览近期赛事安排、已结束场次的比分及简要统计。页面按联赛、日期、项目分类，方便筛选关注内容。</p>
+      </div>
+      <div class="scene-card">
+        <span class="card-icon">📊</span>
+        <h3>数据趋势参考</h3>
+        <p>提供球队/选手的近期表现、交锋记录及部分进阶指标，帮助用户从数据角度观察运动项目的动态变化。</p>
+      </div>
+      <div class="scene-card">
+        <span class="card-icon">💬</span>
+        <h3>社区观点交流</h3>
+        <p>用户可在特定话题下发表看法、提问或分享见解。讨论区设有基础管理规则，鼓励理性、友好的讨论氛围。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见说明 (FAQ 摘要) -->
+  <section class="faq-section">
+    <h2>常见说明摘要</h2>
+    <dl>
+      <div class="faq-item">
+        <dt>信息更新频率如何？</dt>
+        <dd>赛事相关数据通常在结束后 30 分钟内完成录入与核对；部分深度统计每日更新一次。平台保留调整更新节奏的权利。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>是否需要注册才能浏览？</dt>
+        <dd>大部分内容对访客开放，无需注册即可查看赛程、数据及资讯。参与评论或收藏等功能需要创建账户。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>如何确保数据准确性？</dt>
+        <dd>平台采用多源比对流程，对关键数据（比分、时间、队伍）进行至少两轮人工复核。如发现错误，会尽快修正并记录勘误。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>移动端适配情况如何？</dt>
+        <dd>页面采用响应式设计，在手机、平板及桌面浏览器上均可正常阅读与操作。部分复杂表格在窄屏下会调整为横向滚动。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- 提示说明 -->
+  <div class="note-tip">
+    <strong>提示：</strong> 本页为站点概述，所有描述基于当前版本的功能与内容规划。如需直接使用平台服务，请访问
+    <a href="https://app-site-xingkongsports.com">星空体育</a> 主站。页面表述内容可能随站点迭代调整，建议以站内实际页面为准。
+  </div>
+
+</main>
+
+<footer class="page-footer">
+  <p>内容说明页 · 仅供参考 · <a href="https://app-site-xingkongsports.com">星空体育</a></p>
+  <p style="margin-top:0.3rem;">© 2025 · 站点信息索引</p>
+</footer>
+
+</body>
+</html>
